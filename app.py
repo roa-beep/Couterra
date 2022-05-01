@@ -95,5 +95,24 @@ def fashionexchange():
     return render_template("fashion-exchange.html")
 
 
+@app.route("/contact", methods=["GET", "POST"])
+def feedback():
+    if request.method == "POST":
+        name = request.form["name"]
+        email = request.form["email"]
+        msg = request.form["message"]
+        db = get_db()
+        cur = db.cursor()
+        try:
+            cur.execute(
+                "INSERT INTO feedback(name, email, message) VALUES (?,?,?)",
+                [name,email,msg],
+            )
+            db.commit()
+        except sqlite3.InterfaceError as err:
+            flash("Feedback not added.")
+    return render_template("contact.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
