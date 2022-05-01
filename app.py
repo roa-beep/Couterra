@@ -164,5 +164,27 @@ def find():
     return render_template("find.html")
 
 
+@app.route("/post", methods=["GET", "POST"])
+def post():
+    if request.method == "POST":
+        photo = request.form["photo"]
+        email = request.form["email"]
+        brand = request.form["brand"]
+        size = request.form["size"]
+        condition = request.form["condition"]
+        extra = request.form["extra"]
+        db = get_db()
+        cur = db.cursor()
+        try:
+            cur.execute(
+                "INSERT INTO post(photo, email, brand, size, condition, extra) VALUES (?,?,?,?,?,?)",
+                [photo,email,brand,size,condition,extra],
+            )
+            db.commit()
+        except sqlite3.InterfaceError as err:
+            flash("Item not posted.")
+    return render_template("post.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)

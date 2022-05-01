@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <head>
    <meta charset="utf-8">
-   <title>Contact Couterra</title>
-   <link href="../static/contact.css" rel="stylesheet" type="text/css">
+   <title>Post Couterra</title>
+   <link href="../static/fashion-exchange.css" rel="stylesheet" type="text/css">
 </head>
 <body class="body">
    <div class="navbar-2">
@@ -14,6 +14,29 @@
             <a href="fashion-exchange" class="nav-component w-nav-link">Fashion Exchange</a>
             <a href="contact" class="nav-component w-nav-link">Contact</a>
          </nav>
+      </div>
+   </div>
+   <div class="about-section">
+      <div class="container-2">
+         <div class="information">
+            <div class="heading-small">What are you posting? Share key details like Brand, Size, and Condition (required)<br></div>
+            <div class="form">
+               <form id="post-form" name="post-form" data-name="Post Form" method="POST" class="form-wrap">
+                  <input class="text-field" maxlength="256" name="photo" placeholder="Enter your photo link" required="">
+                  <input type="email" class="text-field" maxlength="256" name="email" placeholder="Enter your email" required="">
+                  <input class="text-field" maxlength="256" name="brand" placeholder="Enter brand name" required="">
+                  <input class="text-field" maxlength="256" name="size" placeholder="Enter size" required="">
+                  <input class="text-field" maxlength="256" name="condition" placeholder="Enter condition" required="">
+                  <textarea placeholder="Enter other noteworthy details like material, quantity, listing price, etc." maxlength="5000" name="extra" class="text-area"></textarea>
+                  <input type="submit" value="Post" class="button-small">
+               </form>
+            </div>
+         </div>
+         <div class="photography-container">
+            <div class="photos">For your photos, we recommend the <br>free image hosting website imgbb</div>
+            <a href="https://imgbb.com" target="_blank" class="logo"><img src="../static/images/gradient-arrow.svg" class="logo"></a>
+         </div>
+         <a class="btn" href="find" >FIND</a>
       </div>
    </div>
    <div class="footer">
