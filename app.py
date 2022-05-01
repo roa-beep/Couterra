@@ -52,5 +52,10 @@ def query_db(query, args=(), one=False):
     return (rv[0] if rv else None) if one else rv
 
 
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
