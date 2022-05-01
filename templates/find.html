@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <head>
    <meta charset="utf-8">
-   <title>Contact Couterra</title>
-   <link href="../static/contact.css" rel="stylesheet" type="text/css">
+   <title>Find Couterra</title>
+   <link href="../static/fashion-exchange.css" rel="stylesheet" type="text/css">
 </head>
 <body class="body">
    <div class="navbar-2">
@@ -14,6 +14,69 @@
             <a href="fashion-exchange" class="nav-component w-nav-link">Fashion Exchange</a>
             <a href="contact" class="nav-component w-nav-link">Contact</a>
          </nav>
+      </div>
+   </div>
+   <div class="about-section">
+      <div class="container-2">
+         <div class="information">
+            <div class="heading-small">The future of thrifting is here!<br></div>
+         </div>
+         <div class="photography-container">
+            <div class="photos">You can find your next favorite clothing item on <br> our platform, while reducing your carbon footprint!</div>
+         </div>
+         <a class="btn" href="post" >POST</a>
+      </div>
+   </div>
+   <div class="work-section">
+      <div class="container-2">
+         <div class="paragraph">
+            <div class="sub-heading">Photo</div>
+            {% for a in all_photos %}
+            {% for aid, num in a.items() %}
+            <div class="paragraph">{{num}}</div>
+            {% endfor %}
+            {% endfor %}
+         </div>
+         <div class="paragraph">
+            <div class="sub-heading">Emails</div>
+            {% for a in all_emails %}
+            {% for aid, num in a.items() %}
+            <div class="paragraph">{{num}}</div>
+            {% endfor %}
+            {% endfor %}
+         </div>
+         <div class="paragraph">
+            <div class="sub-heading">Brands</div>
+            {% for a in all_brands %}
+            {% for aid, num in a.items() %}
+            <div class="paragraph">{{num}}</div>
+            {% endfor %}
+            {% endfor %}
+         </div>
+         <div class="paragraph">
+            <div class="sub-heading">Sizes</div>
+            {% for a in all_sizes %}
+            {% for aid, num in a.items() %}
+            <div class="paragraph">{{num}}</div>
+            {% endfor %}
+            {% endfor %}
+         </div>
+         <div class="paragraph">
+            <div class="sub-heading">Condition</div>
+            {% for a in all_conditions %}
+            {% for aid, num in a.items() %}
+            <div class="paragraph">{{num}}</div>
+            {% endfor %}
+            {% endfor %}
+         </div>
+         <div class="paragraph">
+            <div class="sub-heading">Extra Info</div>
+            {% for a in all_extras %}
+            {% for aid, num in a.items() %}
+            <div class="paragraph">{{num}}</div>
+            {% endfor %}
+            {% endfor %}
+         </div>
       </div>
    </div>
    <div class="footer">
