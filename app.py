@@ -114,5 +114,55 @@ def feedback():
     return render_template("contact.html")
 
 
+@app.route("/find")
+def find():
+    sql_photos = """
+    SELECT photo
+    FROM post
+    ORDER BY brand ASC
+    """
+    sql_emails = """
+    SELECT email
+    FROM post
+    ORDER BY brand ASC
+    """
+    sql_brands = """
+    SELECT brand
+    FROM post
+    ORDER BY brand ASC
+    """
+    sql_sizes = """
+    SELECT size
+    FROM post
+    ORDER BY brand ASC
+    """
+    sql_conditions = """
+    SELECT condition
+    FROM post
+    ORDER BY brand ASC
+    """
+    sql_extras = """
+    SELECT extra
+    FROM post
+    ORDER BY brand ASC
+    """
+    photos = query_db(sql_photos)
+    emails = query_db(sql_emails)
+    brands = query_db(sql_brands)
+    sizes = query_db(sql_sizes)
+    conditions = query_db(sql_conditions)
+    extras = query_db(sql_extras)
+    return render_template("find.html",
+                        all_photos=photos,
+                        all_emails=emails,
+                        all_brands=brands,
+                        all_sizes=sizes,
+                        all_conditions=conditions,
+                        all_extras=extras)  
+
+
+    return render_template("find.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
