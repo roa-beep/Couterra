@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <head>
    <meta charset="utf-8">
-   <title>Contact Couterra</title>
-   <link href="../static/contact.css" rel="stylesheet" type="text/css">
+   <title>Ethical Brands</title>
+   <link href="../static/ethical-brands.css" rel="stylesheet" type="text/css">
 </head>
 <body class="body">
    <div class="navbar-2">
@@ -14,6 +14,65 @@
             <a href="fashion-exchange" class="nav-component w-nav-link">Fashion Exchange</a>
             <a href="contact" class="nav-component w-nav-link">Contact</a>
          </nav>
+      </div>
+   </div>
+   <div class="hero-section">
+      <div class="hero-wrapper">
+         <h1 class="hero-heading">Ethical Brands<br></h1>
+         <p class="hero-paragraph">Find companies that do good</p>
+      </div>
+   </div>
+   <div class="container-2">
+      <div class="information">
+         <p class="sub-heading">SUMMARY</p>
+         <div class="heading">Ethical Brands Database</div>
+         <p class="paragraph">The Ethical Brands Database is an online directory of brands who have 
+            gone through a rigorous certification process to prove 
+            their commitment to the environment, workers, and customers. It provides information 
+            about each company’s name and website as well as their headquarters location.
+            This is a free resource for people who want to purchase products from Certified B 
+            Corporations in the Apparel, Footwear & Accessories industry.
+         </p>
+      </div>
+   </div>
+   <div class="work-section">
+      <div class="container-2">
+         <div align="center">
+            <div class="grid ">
+               <div class="paragraph">
+                  <div class="sub-heading">City</div>
+                  {% for a in company_names %}
+                  {% for aid, num in a.items() %}
+                  <div class="paragraph">{{num}}</div>
+                  {% endfor %}
+                  {% endfor %}
+               </div>
+               <div class="paragraph">
+                  <div class="sub-heading">Country</div>
+                  {% for a in all_countries %}
+                  {% for aid, num in a.items() %}
+                  <div class="paragraph">{{num}}</div>
+                  {% endfor %}
+                  {% endfor %}
+               </div>
+               <div class="paragraph">
+                  <div class="sub-heading">City</div>
+                  {% for a in all_cities %}
+                  {% for aid, num in a.items() %}
+                  <div class="paragraph">{{num}}</div>
+                  {% endfor %}
+                  {% endfor %}
+               </div>
+               <div class="paragraph">
+                  <div class="sub-heading">Website</div>
+                  {% for a in all_websites %}
+                  {% for aid, num in a.items() %}
+                  <div class="paragraph">{{num}}</div>
+                  {% endfor %}
+                  {% endfor %}
+               </div>
+            </div>
+         </div>
       </div>
    </div>
    <div class="footer">
