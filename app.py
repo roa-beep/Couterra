@@ -57,5 +57,38 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/ethical-brands")
+def ethicalbrands():
+    sql_names = """
+    SELECT company_name
+    FROM couterra
+    ORDER BY company_name ASC
+    """
+    sql_countries = """
+    SELECT country
+    FROM couterra
+    ORDER BY company_name ASC
+    """
+    sql_cities = """
+    SELECT city
+    FROM couterra
+    ORDER BY company_name ASC
+    """
+    sql_websites = """
+    SELECT website
+    FROM couterra
+    ORDER BY company_name ASC
+    """
+    names = query_db(sql_names)
+    countries = query_db(sql_countries)
+    cities = query_db(sql_cities)
+    websites = query_db(sql_websites)
+    return render_template("ethical-brands.html",
+                        company_names=names,
+                        all_countries=countries,
+                        all_cities=cities,
+                        all_websites=websites)  
+
+
 if __name__ == "__main__":
     app.run(debug=True)
