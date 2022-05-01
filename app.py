@@ -90,5 +90,10 @@ def ethicalbrands():
                         all_websites=websites)  
 
 
+@app.route("/fashion-exchange")
+def fashionexchange():
+    return render_template("fashion-exchange.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
