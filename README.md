@@ -32,7 +32,7 @@ Implementing tables without using the HTML table tag was difficult because I had
 
 I am proud of the work that I have done so far. I have been able to accomplish a lot in this time span. I started by building the frontend of Couterra, which is written in HTML and CSS. Then I built the backend, which is written in Python with an integrated SQLite database using the Flask framework. 
 
-[The Couterra website](https://couterra.onrender.com) is successfully deployed using Heroku.
+[The Couterra website](https://couterra.onrender.com) is successfully deployed using Render.
 
 ## What I learnt
 
